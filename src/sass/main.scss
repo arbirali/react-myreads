@@ -1,0 +1,144 @@
+@import "variables";
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import "loader";
+
+.card-title {
+    position: relative;
+    padding-right: 15px;
+}
+
+.dropdown-toggle {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 8px;
+
+    &:after {
+        display: none;
+    }
+}
+
+.dropdown {
+    top: -4px;
+    right: -14px;
+    position: absolute;
+
+    .book-details & {
+        right: 0;
+    }
+}
+
+.card {
+    margin-bottom: 2rem;
+    width: 100%;
+
+    .image-frame {
+        height: 200px;
+        display: flex;
+        padding: 10px;
+        align-itmes: center;
+        justify-content: center;
+        text-align: center;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+        }
+    }
+}
+
+.add-book {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.card-grid {
+
+    > div {
+        display: flex;
+    }
+}
+
+.book-details {
+
+    .image-frame {
+        border: 1px solid #ccc;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 290px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+
+        img {
+            max-width: 150px;
+            max-height: 150px;
+        }
+    }
+}
+
+.authors-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    color: #888;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 5px;
+
+        &:after {
+            content: ',';
+        }
+
+        &:last-child {
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.header {
+    border-bottom: 1px solid #ccc;
+    background: #f2f2f2;
+    padding: 10px;
+    margin-bottom: 30px;
+
+    h1 {
+        margin: 0;
+        font-weight: bold;
+    }
+}
+
+.details-list {
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+
+    li {
+        margin-bottom: 3px;
+    }
+
+    strong {
+        display: inline-block;
+        vertical-align: top;
+        width: 120px;
+    }
+
+    .details {
+        display: inline-block;
+        vertical-align: top;
+        width: calc( 100% - 125px );
+    }
+}
