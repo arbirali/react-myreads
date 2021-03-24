@@ -47,7 +47,6 @@ class App extends Component {
 
   searchBook = (query) => {
     search(query).then(response => {
-      console.log(response);
       this.setState({
         searchedBooks: response
       });
@@ -72,6 +71,7 @@ class App extends Component {
             </Route>
             <Route path="/search">
               <SearchBook
+                shelfBooks={ books }
                 onSearchBook={this.searchBook}
                 searchedBooks={this.state.searchedBooks}
                 updateShelf={ this.onUpdateShelf}

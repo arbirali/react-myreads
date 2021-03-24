@@ -24,7 +24,7 @@ class SearchBook extends Component {
   }
 
   render () {
-    let { searchedBooks, updateShelf } = this.props;
+    let { searchedBooks, updateShelf, shelfBooks } = this.props;
     return (
       <div className="container">
         <Link to="/"><span className="back-arrow">&#8678;</span> Go Back</Link>
@@ -50,13 +50,20 @@ class SearchBook extends Component {
         </div>
         <div className="row card-grid">
           {
-            (searchedBooks && searchedBooks.length > 0) && searchedBooks.map( book => (
-              <Book
+            (searchedBooks && searchedBooks.length > 0) && searchedBooks.map( book => {
+              let currShelf = 'none';
+              shelfBooks.forEach((shelfBook)=> {
+                if(shelfBook.id === book.id){
+                  currShelf = shelfBook.shelf
+                }
+              })
+              return <Book
                 book={ book }
                 key={ book.id }
+                currShelf={ currShelf }
                 updateShelf={ updateShelf }
               />
-            ))
+            })
           }
         </div>
       </div>

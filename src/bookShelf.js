@@ -18,7 +18,7 @@ class BookShelf extends Component {
         </Row>
         <Row className="card-grid">
           { currShelfBooks.map(book => (
-            <Book book={book} updateShelf={updateShelf} key={book.id} />
+            <Book book={book} currShelf={ currShelf } updateShelf={updateShelf} key={book.id} />
           ))}
         </Row>
       </Container>
